@@ -1,0 +1,39 @@
+# Flutter
+.dart_tool/
+.packages
+build/
+*.iml
+.idea/
+.vscode/
+*.g.dart
+*.freezed.dart
+.fvm/
+
+# Android
+android/app/build/
+android/.gradle/
+android/build/
+android/local.properties
+*.apk
+*.aab
+*.keystore
+!android/app/*.jks
+
+# iOS
+ios/Pods/
+ios/build/
+ios/.symlinks/
+*.ipa
+
+# Supabase
+supabase/.branches/
+supabase/.temp/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db

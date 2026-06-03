@@ -1,0 +1,12 @@
+# Supabase configuration for Fitted
+# Generated as reference — actual config managed via supabase CLI
+
+[db]
+port = 54322
+
+[auth]
+site_url = "fitted://"
+additional_redirect_urls = ["fitted://auth/callback"]
+
+[storage]
+file_size_limit = "50MiB"
