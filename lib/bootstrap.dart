@@ -7,16 +7,8 @@ Future<void> bootstrap() async {
   await HiveService.initialize();
 
   // Initialize Supabase
-  // TODO: Replace with actual env values or use flutter_dotenv
-  const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
-  const supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
-
-  if (supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty) {
-    await SupabaseService.initialize(
-      url: supabaseUrl,
-      anonKey: supabaseAnonKey,
-    );
-  } else {
-    print('[Bootstrap] Supabase not configured — running in offline mode');
-  }
+  await SupabaseService.initialize(
+    url: 'https://tltzaslwhualoctbkdgw.supabase.co',
+    anonKey: 'sb_publishable_y16tEeN0n9-lnyAkvagdrw_2UxShzD6',
+  );
 }
