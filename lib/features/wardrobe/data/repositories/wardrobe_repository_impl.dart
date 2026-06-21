@@ -79,14 +79,14 @@ class WardrobeRepositoryImpl implements WardrobeRepository {
   Future<String> uploadImage({
     required String userId,
     required String itemId,
-    required String filePath,
+    required List<int> bytes,
     required bool isProcessed,
   }) async {
     return ErrorHandler.guard(() {
       return _remote.uploadImage(
         userId: userId,
         itemId: itemId,
-        filePath: filePath,
+        bytes: bytes,
         isProcessed: isProcessed,
       );
     });

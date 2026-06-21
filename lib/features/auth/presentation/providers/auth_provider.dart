@@ -71,6 +71,14 @@ class AuthNotifier extends AsyncNotifier<void> {
     });
   }
 
+  Future<void> signInAsDemo() async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() async {
+      final repo = ref.read(authRepositoryProvider);
+      await repo.signInAsDemo();
+    });
+  }
+
   Future<void> signOut() async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() async {

@@ -27,9 +27,9 @@ enum AnalyticsEvent {
 }
 
 class AnalyticsService {
-  AnalyticsService._();
+  AnalyticsService();
 
-  static Future<void> initialize({required String apiKey}) async {
+  Future<void> initialize({required String apiKey}) async {
     // PostHog initialization happens in bootstrap.dart
     // This service wraps PostHog calls for typed events.
   }

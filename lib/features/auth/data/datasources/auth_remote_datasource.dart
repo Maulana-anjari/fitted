@@ -45,7 +45,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
       id: user.id,
       email: user.email ?? '',
       name: user.userMetadata?['name'] as String?,
-      createdAt: user.createdAt,
+      createdAt: DateTime.parse(user.createdAt),
     );
   }
 
@@ -85,7 +85,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
 
   @override
   Future<AppUser> signInWithGoogle() async {
-    await _client.auth.signInWithOAuth(sb.Provider.google);
+    await _client.auth.signInWithOAuth(sb.OAuthProvider.google);
 
     final currentUser = _client.auth.currentUser;
     if (currentUser != null) {
@@ -96,7 +96,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
 
   @override
   Future<AppUser> signInWithApple() async {
-    await _client.auth.signInWithOAuth(sb.Provider.apple);
+    await _client.auth.signInWithOAuth(sb.OAuthProvider.apple);
 
     final currentUser = _client.auth.currentUser;
     if (currentUser != null) {
@@ -112,7 +112,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
 
   @override
   Future<void> resetPassword({required String email}) async {
-    await _client.auth.resetPasswordForEmail(email: email);
+    await _client.auth.resetPasswordForEmail(email);
   }
 
   @override
@@ -142,7 +142,9 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
         email: authUser?.email ?? '',
         name: authUser?.userMetadata?['name'] as String?,
         avatarUrl: authUser?.userMetadata?['avatar_url'] as String?,
-        createdAt: authUser?.createdAt ?? DateTime.now(),
+        createdAt: authUser?.createdAt != null
+            ? DateTime.parse(authUser!.createdAt)
+            : DateTime.now(),
       );
     }
 
