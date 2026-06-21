@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Fitted — AI Wardrobe Intelligence</title>
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/app.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👔</text></svg>" />
+
+  <style>
+    /* Toggle switch for dark mode */
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .switch input + span { display: none; } /* hide the span, we'll use the inline style */
+    .switch input { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--color-border); border-radius: var(--radius-full); transition: 0.2s; }
+    .switch input:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; border-radius: 50%; transition: 0.2s; }
+    .switch input:checked { background-color: var(--color-primary); }
+    .switch input:checked:before { transform: translateX(20px); }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <!-- App Bar -->
+    <header class="app-bar hidden" id="app-bar">
+      <button class="app-bar-btn" id="btn-back">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <span class="app-bar-title" id="app-bar-title">FITTED</span>
+      <button class="app-bar-btn" id="btn-theme" onclick="document.querySelector('#app').dispatchEvent(new Event('toggle-theme'))">
+        <span class="material-icons" id="theme-icon">dark_mode</span>
+      </button>
+    </header>
+
+    <!-- Screens -->
+    <main>
+      <div class="screen" id="screen-welcome"></div>
+      <div class="screen" id="screen-onboarding"></div>
+      <div class="screen" id="screen-login"></div>
+      <div class="screen" id="screen-signup"></div>
+      <div class="screen screen-padded" id="screen-daily-fit"></div>
+      <div class="screen screen-padded" id="screen-wardrobe"></div>
+      <div class="screen screen-padded" id="screen-fit-planner"></div>
+      <div class="screen screen-padded" id="screen-fit-check" style="padding-bottom:4px"></div>
+      <div class="screen screen-padded" id="screen-profile"></div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav hidden" id="bottom-nav">
+      <button class="nav-item active" data-route="daily-fit">
+        <span class="material-icons icon">auto_awesome</span>
+        <span>Daily Fit</span>
+      </button>
+      <button class="nav-item" data-route="wardrobe">
+        <span class="material-icons icon">checkroom</span>
+        <span>Wardrobe</span>
+      </button>
+      <button class="nav-item" data-route="fit-planner">
+        <span class="material-icons icon">calendar_today</span>
+        <span>Planner</span>
+      </button>
+      <button class="nav-item" data-route="fit-check">
+        <span class="material-icons icon">chat</span>
+        <span>Fit Check</span>
+      </button>
+      <button class="nav-item" data-route="profile">
+        <span class="material-icons icon">person</span>
+        <span>Profile</span>
+      </button>
+    </nav>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <!-- App Script -->
+  <script type="module" src="js/app.js"></script>
+
+  <!-- Theme toggle handler -->
+  <script>
+    document.querySelector('#app').addEventListener('toggle-theme', () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? '' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('theme-icon').textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+    });
+  </script>
+</body>
+</html>
