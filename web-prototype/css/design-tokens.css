@@ -1,0 +1,103 @@
+/* ── Fitted Design Tokens (from Stitch #4081707793138547390) ── */
+
+:root {
+  /* Primary */
+  --color-primary: #111827;
+  --color-primary-light: #374151;
+  --color-primary-dark: #0B111E;
+
+  /* AI Accent (Secondary) */
+  --color-ai: #6366F1;
+  --color-ai-light: #818CF8;
+  --color-ai-dark: #4F46E5;
+  --color-ai-gradient-start: #4648D4;
+  --color-ai-gradient-end: #6063EE;
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #BA1A1A;
+  --color-error-container: #FFDAD6;
+
+  /* Surface */
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-surface-dim: #DCD9DB;
+  --color-surface-container-low: #F6F3F4;
+  --color-surface-container: #F0EDEE;
+  --color-surface-container-high: #EAE7E9;
+
+  /* Border */
+  --color-border: #E5E7EB;
+  --color-outline: #76777D;
+  --color-outline-variant: #C6C6CD;
+
+  /* Text */
+  --color-text-primary: #1B1B1D;
+  --color-text-secondary: #45464C;
+  --color-text-tertiary: #76777D;
+  --color-text-inverse: #FFFFFF;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-blur: 12px;
+
+  /* AI Glow */
+  --ai-glow-color: rgba(99, 102, 241, 0.1);
+  --ai-glow-shadow: 0 0 40px 10px rgba(99, 102, 241, 0.1);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, sans-serif;
+  --fs-display: 40px;
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-caption: 14px;
+  --fs-metadata: 12px;
+
+  /* Spacing (Stitch: xs/base=8, sm/gutter=16, md=24, lg=32, xl=40, 2xl=48, 3xl=64) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Radius (Stitch: DEFAULT=4px, lg=8px, xl=12px, full=9999px) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04);
+
+  /* Layout */
+  --nav-height: 64px;
+  --max-width: 430px;
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --color-background: #0C1322;
+  --color-surface: #191F2F;
+  --color-surface-dim: #0C1322;
+  --color-surface-container-low: #141B2B;
+  --color-surface-container: #191F2F;
+  --color-surface-container-high: #232A3A;
+  --color-border: #323949;
+  --color-outline: #908FA0;
+  --color-text-primary: #DCE2F7;
+  --color-text-secondary: #C7C4D7;
+  --color-text-tertiary: #908FA0;
+  --color-text-inverse: #0C1322;
+  --color-error: #FFB4AB;
+  --color-error-container: #93000A;
+  --glass-bg: rgba(31, 41, 55, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 20px;
+}
