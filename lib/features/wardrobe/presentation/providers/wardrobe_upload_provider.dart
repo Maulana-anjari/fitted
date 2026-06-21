@@ -42,13 +42,11 @@ class UploadState {
 
 final wardrobeUploadProvider =
     StateNotifierProvider<WardrobeUploadNotifier, UploadState>((ref) {
-  return WardrobeUploadNotifier(ref);
+  return WardrobeUploadNotifier();
 });
 
 class WardrobeUploadNotifier extends StateNotifier<UploadState> {
-  final Ref _ref;
-
-  WardrobeUploadNotifier(this._ref) : super(const UploadState());
+  WardrobeUploadNotifier() : super(const UploadState());
 
   void setImagePath(String path) {
     state = state.copyWith(imagePath: path, step: UploadStep.cropping);

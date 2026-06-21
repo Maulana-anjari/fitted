@@ -1,6 +1,4 @@
-import 'dart:io';
 import '../../../../core/error/error_handler.dart';
-import '../../../../core/network/api_exception.dart';
 import '../../domain/models/wardrobe_item.dart';
 import '../../domain/repositories/wardrobe_repository.dart';
 import '../datasources/wardrobe_remote_datasource.dart';
@@ -36,7 +34,7 @@ class WardrobeRepositoryImpl implements WardrobeRepository {
       );
       await _local.cacheItems(items);
       return items;
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       // Offline fallback
       final cached = await _local.getCachedItems();
       if (cached.isNotEmpty) return cached;
@@ -79,14 +77,14 @@ class WardrobeRepositoryImpl implements WardrobeRepository {
   Future<String> uploadImage({
     required String userId,
     required String itemId,
-    required String filePath,
+    required List<int> bytes,
     required bool isProcessed,
   }) async {
     return ErrorHandler.guard(() {
       return _remote.uploadImage(
         userId: userId,
         itemId: itemId,
-        filePath: filePath,
+        bytes: bytes,
         isProcessed: isProcessed,
       );
     });

@@ -90,7 +90,7 @@ class WardrobeGridItem extends StatelessWidget {
                           vertical: 2,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.aiAccent.withOpacity(0.9),
+                          color: AppColors.aiAccent.withValues(alpha: 0.9),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: const Icon(

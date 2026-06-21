@@ -50,7 +50,8 @@ class Fit {
       season: season ?? this.season,
       isFavorite: isFavorite ?? this.isFavorite,
       isArchived: isArchived ?? this.isArchived,
-      aiRecommendationReason: aiRecommendationReason ?? this.aiRecommendationReason,
+      aiRecommendationReason:
+          aiRecommendationReason ?? this.aiRecommendationReason,
       itemIds: itemIds ?? this.itemIds,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,

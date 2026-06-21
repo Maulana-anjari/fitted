@@ -21,7 +21,7 @@ abstract class WardrobeRepository {
   Future<String> uploadImage({
     required String userId,
     required String itemId,
-    required String filePath,
+    required List<int> bytes,
     required bool isProcessed,
   });
 

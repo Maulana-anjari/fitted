@@ -16,10 +16,10 @@ class AiMetadataCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.sm),
       decoration: BoxDecoration(
-        color: AppColors.aiAccent.withOpacity(0.05),
+        color: AppColors.aiAccent.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(AppRadius.md),
         border: Border.all(
-          color: AppColors.aiAccent.withOpacity(0.15),
+          color: AppColors.aiAccent.withValues(alpha: 0.15),
         ),
       ),
       child: Column(
@@ -47,8 +47,7 @@ class AiMetadataCard extends StatelessWidget {
             spacing: 8,
             runSpacing: 6,
             children: [
-              if (metadata.color != null)
-                AiAccentChip(label: metadata.color!),
+              if (metadata.color != null) AiAccentChip(label: metadata.color!),
               if (metadata.material != null)
                 AiAccentChip(label: metadata.material!),
               if (metadata.season != null)

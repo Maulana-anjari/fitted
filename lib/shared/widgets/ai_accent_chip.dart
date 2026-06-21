@@ -18,10 +18,10 @@ class AiAccentChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: AppColors.aiAccent.withOpacity(0.1),
+        color: AppColors.aiAccent.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppRadius.chip),
         border: Border.all(
-          color: AppColors.aiAccent.withOpacity(0.3),
+          color: AppColors.aiAccent.withValues(alpha: 0.3),
         ),
       ),
       child: Row(

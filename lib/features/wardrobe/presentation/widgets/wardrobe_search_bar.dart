@@ -46,13 +46,16 @@ class _WardrobeSearchBarState extends ConsumerState<WardrobeSearchBar> {
                   icon: const Icon(Icons.clear, size: 18),
                   onPressed: () {
                     _controller.clear();
-                    ref.read(wardrobeFiltersProvider.notifier).setSearchQuery('');
+                    ref
+                        .read(wardrobeFiltersProvider.notifier)
+                        .setSearchQuery('');
                   },
                 )
               : null,
           filled: true,
           fillColor: AppColors.surface,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(AppRadius.input),
             borderSide: const BorderSide(color: AppColors.border),

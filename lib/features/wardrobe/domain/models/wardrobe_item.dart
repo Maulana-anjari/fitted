@@ -112,8 +112,8 @@ class WardrobeItem {
         userId: json['user_id'] as String,
         originalImageUrl: json['original_image_url'] as String?,
         processedImageUrl: json['processed_image_url'] as String?,
-        category: ClothingCategory.fromString(
-            json['category'] as String? ?? 'top'),
+        category:
+            ClothingCategory.fromString(json['category'] as String? ?? 'top'),
         color: json['color'] as String?,
         material: json['material'] as String?,
         season: json['season'] as String?,

@@ -17,7 +17,6 @@ import '../../shared/widgets/app_scaffold.dart';
 import 'route_names.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authStateProvider);
@@ -26,7 +25,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
     navigatorKey: _rootNavigatorKey,
     initialLocation: RouteNames.dailyFit,
     redirect: (context, state) {
-      final isAuthenticated = authState.isAuthenticated;
+      final isAuthenticated = authState.value?.isAuthenticated ?? false;
       final isAuthRoute = state.matchedLocation == RouteNames.welcome ||
           state.matchedLocation == RouteNames.onboarding ||
           state.matchedLocation == RouteNames.login ||

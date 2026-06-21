@@ -11,28 +11,26 @@ sealed class Failure extends Equatable {
 
 class NetworkFailure extends Failure {
   final int? statusCode;
-  const NetworkFailure({required String message, this.statusCode})
-      : super(message: message);
+  const NetworkFailure({required super.message, this.statusCode});
 }
 
 class AuthFailure extends Failure {
-  const AuthFailure({required String message}) : super(message: message);
+  const AuthFailure({required super.message});
 }
 
 class CacheFailure extends Failure {
-  const CacheFailure({required String message}) : super(message: message);
+  const CacheFailure({required super.message});
 }
 
 class ServerFailure extends Failure {
   final int? statusCode;
-  const ServerFailure({required String message, this.statusCode})
-      : super(message: message);
+  const ServerFailure({required super.message, this.statusCode});
 }
 
 class AiServiceFailure extends Failure {
-  const AiServiceFailure({required String message}) : super(message: message);
+  const AiServiceFailure({required super.message});
 }
 
 class ValidationFailure extends Failure {
-  const ValidationFailure({required String message}) : super(message: message);
+  const ValidationFailure({required super.message});
 }
