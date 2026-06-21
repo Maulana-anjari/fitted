@@ -156,7 +156,7 @@ class _DailyFitContent extends StatelessWidget {
                 Text(
                   'Add more items to your wardrobe to unlock personalized daily Fit recommendations.',
                   style: AppTypography.body.copyWith(
-                    color: AppColors.textInverse.withOpacity(0.8),
+                    color: AppColors.textInverse.withValues(alpha: 0.8),
                     height: 1.5,
                   ),
                 ),
@@ -167,7 +167,7 @@ class _DailyFitContent extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.textInverse.withOpacity(0.15),
+                    color: AppColors.textInverse.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(AppRadius.chip),
                   ),
                   child: Text(
@@ -236,7 +236,7 @@ class _StatCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.md),
         border: Border.all(
           color: accent
-              ? AppColors.aiAccent.withOpacity(0.3)
+              ? AppColors.aiAccent.withValues(alpha: 0.3)
               : AppColors.border,
         ),
       ),
@@ -247,7 +247,7 @@ class _StatCard extends StatelessWidget {
             height: 40,
             decoration: BoxDecoration(
               color: accent
-                  ? AppColors.aiAccent.withOpacity(0.1)
+                  ? AppColors.aiAccent.withValues(alpha: 0.1)
                   : AppColors.background,
               borderRadius: BorderRadius.circular(12),
             ),

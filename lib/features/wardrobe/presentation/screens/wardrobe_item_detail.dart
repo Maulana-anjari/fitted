@@ -19,8 +19,7 @@ class WardrobeItemDetail extends ConsumerStatefulWidget {
   const WardrobeItemDetail({super.key, required this.itemId});
 
   @override
-  ConsumerState<WardrobeItemDetail> createState() =>
-      _WardrobeItemDetailState();
+  ConsumerState<WardrobeItemDetail> createState() => _WardrobeItemDetailState();
 }
 
 class _WardrobeItemDetailState extends ConsumerState<WardrobeItemDetail> {
@@ -77,7 +76,8 @@ class _WardrobeItemDetailState extends ConsumerState<WardrobeItemDetail> {
               Navigator.pop(ctx);
               if (context.canPop()) context.pop();
             },
-            child: const Text('Delete', style: TextStyle(color: AppColors.error)),
+            child:
+                const Text('Delete', style: TextStyle(color: AppColors.error)),
           ),
         ],
       ),
@@ -142,13 +142,13 @@ class _ItemDetailContent extends ConsumerWidget {
               const Spacer(),
               IconButton(
                 onPressed: () {
-                  ref
-                      .read(wardrobeItemsProvider.notifier)
-                      .toggleFavorite(item);
+                  ref.read(wardrobeItemsProvider.notifier).toggleFavorite(item);
                 },
                 icon: Icon(
                   item.isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: item.isFavorite ? AppColors.error : AppColors.textTertiary,
+                  color: item.isFavorite
+                      ? AppColors.error
+                      : AppColors.textTertiary,
                 ),
               ),
             ],
@@ -162,9 +162,10 @@ class _ItemDetailContent extends ConsumerWidget {
           _DetailRow(label: 'Formality', value: item.formality ?? '—'),
           if (item.styleTags.isNotEmpty) ...[
             const SizedBox(height: AppSpacing.sm),
-            Text('Style Tags', style: AppTypography.caption.copyWith(
-              fontWeight: FontWeight.w600,
-            )),
+            Text('Style Tags',
+                style: AppTypography.caption.copyWith(
+                  fontWeight: FontWeight.w600,
+                )),
             const SizedBox(height: AppSpacing.xs),
             Wrap(
               spacing: 6,
@@ -209,9 +210,7 @@ class _ItemDetailContent extends ConsumerWidget {
             width: double.infinity,
             child: OutlinedButton.icon(
               onPressed: () {
-                ref
-                    .read(wardrobeItemsProvider.notifier)
-                    .markAsWorn(item);
+                ref.read(wardrobeItemsProvider.notifier).markAsWorn(item);
               },
               icon: const Icon(Icons.check, size: 18),
               label: const Text('Mark as Worn Today'),
@@ -226,9 +225,10 @@ class _ItemDetailContent extends ConsumerWidget {
           ],
 
           if (item.notes != null) ...[
-            Text('Notes', style: AppTypography.caption.copyWith(
-              fontWeight: FontWeight.w600,
-            )),
+            Text('Notes',
+                style: AppTypography.caption.copyWith(
+                  fontWeight: FontWeight.w600,
+                )),
             const SizedBox(height: AppSpacing.xs),
             Text(
               item.notes!,
@@ -303,12 +303,14 @@ class _StatItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(value, style: AppTypography.caption.copyWith(
-              fontWeight: FontWeight.w600,
-            )),
-            Text(label, style: AppTypography.metadata.copyWith(
-              color: AppColors.textTertiary,
-            )),
+            Text(value,
+                style: AppTypography.caption.copyWith(
+                  fontWeight: FontWeight.w600,
+                )),
+            Text(label,
+                style: AppTypography.metadata.copyWith(
+                  color: AppColors.textTertiary,
+                )),
           ],
         ),
       ],

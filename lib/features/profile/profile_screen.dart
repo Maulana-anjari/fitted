@@ -221,9 +221,10 @@ class _SettingsTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title, style: AppTypography.caption.copyWith(
-                    fontWeight: FontWeight.w500,
-                  )),
+                  Text(title,
+                      style: AppTypography.caption.copyWith(
+                        fontWeight: FontWeight.w500,
+                      )),
                   Text(
                     subtitle,
                     style: AppTypography.metadata.copyWith(

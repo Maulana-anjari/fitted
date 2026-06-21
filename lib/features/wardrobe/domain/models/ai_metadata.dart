@@ -33,8 +33,8 @@ class AiMetadata {
       };
 
   factory AiMetadata.fromJson(Map<String, dynamic> json) => AiMetadata(
-        category: ClothingCategory.fromString(
-            json['category'] as String? ?? 'top'),
+        category:
+            ClothingCategory.fromString(json['category'] as String? ?? 'top'),
         color: json['color'] as String?,
         material: json['material'] as String?,
         season: json['season'] as String?,

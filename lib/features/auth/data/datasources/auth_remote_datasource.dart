@@ -34,8 +34,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   AuthRemoteDatasourceImpl(this._client);
 
   @override
-  Stream<sb.AuthState> get authStateChanges =>
-      _client.auth.onAuthStateChange;
+  Stream<sb.AuthState> get authStateChanges => _client.auth.onAuthStateChange;
 
   @override
   AppUser? get currentUser {

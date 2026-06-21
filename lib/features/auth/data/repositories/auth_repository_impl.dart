@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 import '../../../../core/error/error_handler.dart';
-import '../../../../core/error/failure.dart';
 import '../../domain/models/user.dart';
 import '../../domain/models/auth_state.dart';
 import '../../domain/repositories/auth_repository.dart';
@@ -50,7 +49,8 @@ class AuthRepositoryImpl implements AuthRepository {
           .maybeSingle();
 
       if (data != null) {
-        _controller.add(AuthState.authenticated(AppUser.fromJson(Map<String, dynamic>.from(data as Map))));
+        _controller.add(AuthState.authenticated(
+            AppUser.fromJson(Map<String, dynamic>.from(data as Map))));
         return;
       }
     } catch (_) {}

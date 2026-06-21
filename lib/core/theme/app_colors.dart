@@ -63,7 +63,8 @@ class AppColors {
 
   // Glass effect (from Stitch)
   static Color glassLight = const Color(0xFFFFFFFF).withValues(alpha: 0.7);
-  static Color glassLightBorder = const Color(0xFFFFFFFF).withValues(alpha: 0.5);
+  static Color glassLightBorder =
+      const Color(0xFFFFFFFF).withValues(alpha: 0.5);
 
   // AI glow
   static Color aiGlow = const Color(0xFF6366F1).withValues(alpha: 0.1);

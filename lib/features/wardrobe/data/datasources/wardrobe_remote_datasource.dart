@@ -117,7 +117,10 @@ class WardrobeRemoteDatasourceImpl implements WardrobeRemoteDatasource {
   Future<void> archiveItem(String id, String userId) async {
     await _client
         .from('wardrobe_items')
-        .update({'is_archived': true, 'updated_at': DateTime.now().toIso8601String()})
+        .update({
+          'is_archived': true,
+          'updated_at': DateTime.now().toIso8601String()
+        })
         .eq('id', id)
         .eq('user_id', userId);
   }
