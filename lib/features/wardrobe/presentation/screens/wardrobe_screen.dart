@@ -106,7 +106,7 @@ class _WardrobeGrid extends ConsumerWidget {
     }
 
     if (filtered.isEmpty) {
-      return EmptyState(
+      return const EmptyState(
         icon: Icons.filter_list,
         title: 'No items match',
         subtitle: 'Try adjusting your filters or search query.',

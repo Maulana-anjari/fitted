@@ -11,7 +11,7 @@ class AppTheme {
   static ThemeData get light => ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: AppColors.primary,
           secondary: AppColors.aiAccent,
           surface: AppColors.surface,
@@ -143,7 +143,7 @@ class AppTheme {
   static ThemeData get dark => ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           primary: AppColors.darkTextPrimary,
           secondary: AppColors.aiAccentLight,
           surface: AppColors.darkSurface,
@@ -152,15 +152,15 @@ class AppTheme {
           onSecondary: AppColors.darkBackground,
           onSurface: AppColors.darkTextPrimary,
           onError: AppColors.darkBackground,
-          surfaceDim: const Color(0xFF0C1322),
-          surfaceBright: const Color(0xFF323949),
-          surfaceContainerLowest: const Color(0xFF070E1D),
-          surfaceContainerLow: const Color(0xFF141B2B),
+          surfaceDim: Color(0xFF0C1322),
+          surfaceBright: Color(0xFF323949),
+          surfaceContainerLowest: Color(0xFF070E1D),
+          surfaceContainerLow: Color(0xFF141B2B),
           surfaceContainer: AppColors.darkSurface,
           surfaceContainerHigh: AppColors.darkSurfaceContainer,
           surfaceContainerHighest: AppColors.darkSurfaceContainerHigh,
           outline: AppColors.darkTextTertiary,
-          outlineVariant: const Color(0xFF464554),
+          outlineVariant: Color(0xFF464554),
         ),
         scaffoldBackgroundColor: AppColors.darkBackground,
         textTheme: AppTypography.textTheme.apply(

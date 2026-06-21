@@ -15,7 +15,10 @@ class WardrobeFilters {
   });
 
   bool get hasActiveFilters =>
-      category != null || color != null || season != null || searchQuery.isNotEmpty;
+      category != null ||
+      color != null ||
+      season != null ||
+      searchQuery.isNotEmpty;
 
   WardrobeFilters copyWith({
     ClothingCategory? category,

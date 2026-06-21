@@ -35,12 +35,12 @@ class UploadProgressWidget extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacing.sm),
       decoration: BoxDecoration(
         color: isError
-            ? AppColors.error.withOpacity(0.1)
+            ? AppColors.error.withValues(alpha: 0.1)
             : AppColors.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isError
-              ? AppColors.error.withOpacity(0.3)
+              ? AppColors.error.withValues(alpha: 0.3)
               : AppColors.border,
         ),
       ),

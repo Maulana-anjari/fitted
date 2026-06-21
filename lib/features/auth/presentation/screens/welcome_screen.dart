@@ -76,7 +76,9 @@ class WelcomeScreen extends ConsumerWidget {
                 child: OutlinedButton.icon(
                   onPressed: authState.isLoading
                       ? null
-                      : () => ref.read(authNotifierProvider.notifier).signInAsDemo(),
+                      : () => ref
+                          .read(authNotifierProvider.notifier)
+                          .signInAsDemo(),
                   icon: authState.isLoading
                       ? const SizedBox(
                           width: 16,
@@ -93,7 +95,8 @@ class WelcomeScreen extends ConsumerWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    side: BorderSide(color: AppColors.aiAccent.withValues(alpha: 0.3)),
+                    side: BorderSide(
+                        color: AppColors.aiAccent.withValues(alpha: 0.3)),
                   ),
                 ),
               ),

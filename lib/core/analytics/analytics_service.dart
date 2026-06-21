@@ -40,7 +40,6 @@ class AnalyticsService {
   }) {
     try {
       // Posthog().identify(userId: userId, properties: properties);
-      print('[Analytics] identify: $userId ${properties ?? {}}');
     } catch (_) {}
   }
 
@@ -50,7 +49,6 @@ class AnalyticsService {
   }) {
     try {
       // Posthog().capture(eventName: event.name, properties: properties);
-      print('[Analytics] ${event.name}: ${properties ?? {}}');
     } catch (_) {}
   }
 
@@ -64,7 +62,6 @@ class AnalyticsService {
   static void reset() {
     try {
       // Posthog().reset();
-      print('[Analytics] reset');
     } catch (_) {}
   }
 }

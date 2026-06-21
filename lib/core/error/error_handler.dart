@@ -25,7 +25,8 @@ class ErrorHandler {
     if (exception is supabase.PostgrestException) {
       return ServerFailure(
         message: exception.message,
-        statusCode: exception.code != null ? int.tryParse(exception.code!) : null,
+        statusCode:
+            exception.code != null ? int.tryParse(exception.code!) : null,
       );
     }
 
