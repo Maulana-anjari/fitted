@@ -1,0 +1,29 @@
+.gitignore
+  s_716357e40b2a8b::t_a08bc33d5d1442 37-39
+pubspec.yaml
+  s_2ef501eef62c99::t_5ec0e5a273e784 25-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "dc49a44233463e1798845aa40be664cb8b209309",
+  "prompts": {},
+  "sessions": {
+    "s_2ef501eef62c99": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6fa2c373-406a-4dda-b3b4-00580bf71a32",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "Maulana Anjari Anggorokasih <maulana17anjari@gmail.com>"
+    },
+    "s_716357e40b2a8b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5824873d-1757-4ef7-9e6a-a366e07f1115",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "Maulana Anjari Anggorokasih <maulana17anjari@gmail.com>"
+    }
+  }
+}
