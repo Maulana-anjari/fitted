@@ -1,0 +1,29 @@
+linux/flutter/generated_plugin_registrant.cc
+  s_2ef501eef62c99::t_03106e8b8c9575 9-12,15-26
+windows/flutter/generated_plugin_registrant.cc
+  s_2ef501eef62c99::t_03106e8b8c9575 9-12,15-22
+windows/flutter/generated_plugins.cmake
+  s_2ef501eef62c99::t_03106e8b8c9575 6-9,13
+linux/flutter/generated_plugins.cmake
+  s_2ef501eef62c99::t_03106e8b8c9575 6-9,13
+.flutter-plugins-dependencies
+  s_2ef501eef62c99::t_03106e8b8c9575 1
+macos/Flutter/GeneratedPluginRegistrant.swift
+  s_2ef501eef62c99::t_03106e8b8c9575 8-15,18-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "ad7cad04a635f16bc882d0d84b7d8df68d6c876d",
+  "prompts": {},
+  "sessions": {
+    "s_2ef501eef62c99": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6fa2c373-406a-4dda-b3b4-00580bf71a32",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "Maulana Anjari Anggorokasih <maulana17anjari@gmail.com>"
+    }
+  }
+}
