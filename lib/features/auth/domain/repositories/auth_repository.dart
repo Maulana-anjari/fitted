@@ -21,6 +21,8 @@ abstract class AuthRepository {
 
   Future<void> signOut();
 
+  Future<AppUser> signInAsDemo();
+
   Future<void> resetPassword({required String email});
 
   Future<void> updateProfile({

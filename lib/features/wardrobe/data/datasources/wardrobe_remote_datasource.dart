@@ -1,6 +1,7 @@
+import 'dart:typed_data';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../domain/models/wardrobe_item.dart';
-import '../../domain/models/ai_metadata.dart';
 
 abstract class WardrobeRemoteDatasource {
   Future<List<WardrobeItem>> getItems({
@@ -19,7 +20,7 @@ abstract class WardrobeRemoteDatasource {
   Future<String> uploadImage({
     required String userId,
     required String itemId,
-    required String filePath,
+    required List<int> bytes,
     required bool isProcessed,
   });
 }
@@ -41,8 +42,7 @@ class WardrobeRemoteDatasourceImpl implements WardrobeRemoteDatasource {
         .from('wardrobe_items')
         .select()
         .eq('user_id', userId)
-        .eq('is_archived', false)
-        .order('created_at', ascending: false);
+        .eq('is_archived', false);
 
     if (category != null) {
       query = query.eq('category', category.toLowerCase());
@@ -51,14 +51,14 @@ class WardrobeRemoteDatasourceImpl implements WardrobeRemoteDatasource {
       query = query.eq('color', color.toLowerCase());
     }
     if (season != null) {
-      query = query.contains('season', season);
+      query = query.contains('season', [season]);
     }
     if (searchQuery != null && searchQuery.isNotEmpty) {
       query = query.or(
           'color.ilike.%$searchQuery%,material.ilike.%$searchQuery%,style_tags.cs.{${searchQuery.toLowerCase()}}');
     }
 
-    final data = await query;
+    final data = await query.order('created_at', ascending: false);
     return (data as List).map((json) {
       return WardrobeItem.fromJson(Map<String, dynamic>.from(json as Map));
     }).toList();
@@ -126,15 +126,15 @@ class WardrobeRemoteDatasourceImpl implements WardrobeRemoteDatasource {
   Future<String> uploadImage({
     required String userId,
     required String itemId,
-    required String filePath,
+    required List<int> bytes,
     required bool isProcessed,
   }) async {
     final bucket = isProcessed ? 'wardrobe-processed' : 'wardrobe-originals';
     final fileName = '$userId/$itemId.jpg';
 
-    await _client.storage.from(bucket).upload(
+    await _client.storage.from(bucket).uploadBinary(
           fileName,
-          filePath,
+          Uint8List.fromList(bytes),
           fileOptions: const FileOptions(upsert: true),
         );
 

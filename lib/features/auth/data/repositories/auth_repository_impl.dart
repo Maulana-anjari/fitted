@@ -8,6 +8,13 @@ import '../../domain/repositories/auth_repository.dart';
 import '../datasources/auth_remote_datasource.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
+  static final AppUser demoUser = AppUser(
+    id: 'demo-user-0000-0000-0000-000000000001',
+    email: 'alex@fitted.app',
+    name: 'Alex',
+    createdAt: DateTime(2025, 1, 1),
+  );
+
   final AuthRemoteDatasource _datasource;
   final StreamController<AuthState> _controller;
 
@@ -102,8 +109,20 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
+  Future<AppUser> signInAsDemo() async {
+    // Brief artificial delay so the UI shows a loading indicator
+    await Future<void>.delayed(const Duration(milliseconds: 600));
+    _controller.add(AuthState.authenticated(demoUser));
+    return demoUser;
+  }
+
+  @override
   Future<void> signOut() async {
-    await ErrorHandler.guard(() => _datasource.signOut());
+    try {
+      await ErrorHandler.guard(() => _datasource.signOut());
+    } catch (_) {
+      // Supabase signOut may fail if no real session (demo case) — ignore
+    }
     _controller.add(AuthState.unauthenticated());
   }
 
