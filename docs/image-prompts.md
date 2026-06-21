@@ -123,6 +123,14 @@ A thin Indigo line separates a small callout box: "Purple = AI Intelligence — 
 
 ---
 
+## Style Notes (applies to all prompts above)
+
+- **Style reference:** Apple product photography, Aesop editorial, COS minimalism, Uniqlo clean aesthetic
+- **Avoid:** Cartoon illustrations, cluttered dashboards, gamified elements, corporate stock photography
+- **Key visual cues:** Indigo = AI features, transparent clothing cutouts = digitized wardrobe, calendar + analytics = planner and insights
+
+---
+
 ## Usage
 
-Generate each image separately via Banana Pro v2 (Gemini). Rename output files to match the filenames above, then place in `/public/images/` (or your portfolio's image directory). Update `fitted-case-study.md` already references these filenames.
+Generate each image separately via Banana Pro v2 (Gemini). Rename output files to match the filenames above, then place in `/public/images/` (or your portfolio's image directory). `fitted-case-study.md` already references these filenames.
