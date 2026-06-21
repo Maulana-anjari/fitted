@@ -464,25 +464,24 @@ Models:
 
 Frontend:
 
-* Flutter
+* Flutter (client app)
 
-Backend:
+Backend (Supabase-native — no NestJS for MVP):
 
-* NestJS
-* TypeScript
+* Supabase Auth — authentication (email/password, OAuth, demo)
+* Supabase Postgres — relational database with row-level security
+* Supabase Storage — private, user-scoped file buckets
+* Supabase Edge Functions (Deno) — server-side compute for AI
+  orchestration; holds service/provider keys so the client never sees them
 
-Database:
+AI providers (called from Edge Functions only):
 
-* PostgreSQL
+* OpenAI GPT-4o Vision (clothing analysis)
+* Gemini 2.5 (fallback analysis)
+* Background-removal service (RMBG)
 
-Storage:
-
-* AWS S3
-* Cloudflare R2
-
-Infrastructure:
-
-* AWS
+> The Supabase-native decision is documented in `TADv2.md` and `CLAUDE.md`.
+> It is revisitable once scale demands a dedicated backend.
 
 ---
 
